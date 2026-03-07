@@ -1,6 +1,6 @@
-# PoshMark Auto Reshare
-==========================
-- Short Python Script to auto share on poshmark, written for my wife.
+# Closet Reshare
+================
+- Short Python script to auto share on Poshmark, written for my wife.
 
   ### REQUIRES TO RUN IN DEBUG MODE, WITH BREAK POINT SET.
 - set break on print for captcha, yes I know this is a stupid way of catching but whatever
@@ -10,5 +10,13 @@
   - Fix static timed pauses, change to dynamic based on page response time
   - Make it not suck.
 
-logs in, goes to closet, selects only available items and reshares.
+Logs in, goes to closet, selects only available items and reshares.
+
+Run with:
+
+```bash
+export POSHMARK_USERNAME="your-poshmark-username-or-email"
+export POSHMARK_PASSWORD="your-poshmark-password"
+python closet_reshare.py
+```
 
