@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poshmark Automation Suite</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <main class="minimal-container">
+        <header>
+            <div class="logo-icon">✨</div>
+            <h1>Poshmark Automation</h1>
+            <p>Your intelligent assistant for Poshmark growth.</p>
+        </header>
+
+        <section class="credentials-section">
+            <h2>Credentials</h2>
+            <div class="input-group">
+                <label for="username">Email or Username</label>
+                <input type="text" id="username" placeholder="meganpmcgee@gmail.com" />
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="••••••••••••" />
+            </div>
+        </section>
+
+        <section class="actions-section">
+            <h2>Actions</h2>
+            <div class="cards-grid">
+                <button class="action-card" data-script="closet">
+                    <div class="card-icon">👗</div>
+                    <h3>Closet Reshare</h3>
+                    <p>Auto-share your closet items.</p>
+                </button>
+                <button class="action-card" data-script="feed">
+                    <div class="card-icon">📱</div>
+                    <h3>Feed Reshare</h3>
+                    <p>Share listings from feed/brands.</p>
+                </button>
+                <button class="action-card" data-script="follow">
+                    <div class="card-icon">👥</div>
+                    <h3>Follow Users</h3>
+                    <p>Auto-follow from brand pages.</p>
+                </button>
+                <button class="action-card" data-script="insights">
+                    <div class="card-icon">📊</div>
+                    <h3>Insights</h3>
+                    <p>Top liked listings for a brand.</p>
+                </button>
+            </div>
+        </section>
+
+        <section class="insights-display-section" style="margin-top: 3rem;">
+            <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--border-color); margin-bottom: 1.5rem; padding-bottom: 0.75rem;">
+                <h2 style="border: none; margin-bottom: 0; padding-bottom: 0;">Insights Results</h2>
+                <button id="refresh-insights-btn" style="background: none; border: 1px solid var(--border-color); cursor: pointer; font-size: 0.8rem; padding: 0.25rem 0.75rem; text-transform: uppercase; transition: all 0.2s ease;">Refresh</button>
+            </div>
+            <div id="insights-container" class="insights-container">
+                <p style="color: var(--text-secondary); font-style: italic; font-size: 0.9rem;">No insights loaded. Run the Insights action and then click Refresh.</p>
+            </div>
+        </section>
+
+        <div id="status-message" class="status-message hidden"></div>
+    </main>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
